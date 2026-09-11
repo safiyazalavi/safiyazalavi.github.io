@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Safiya Alavi | Data Science Portfolio</title>
+
+  <meta
+    name="description"
+    content="Safiya Alavi's data science portfolio featuring machine learning, biomedical NLP, biotechnology, and investment analytics projects."
+  />
+
+  <style>
+    /* ------------------------------
+       GLOBAL
+    ------------------------------ */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      color: #1f2937;
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+
+    /* ------------------------------
+       NAVIGATION
+    ------------------------------ */
+
+    nav {
+      border-bottom: 1px solid #eeeeee;
+      background: rgba(255, 255, 255, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .nav-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #4b5563;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #111827;
+    }
+
+
+    /* ------------------------------
+       HERO
+    ------------------------------ */
+
+    .hero {
+      padding: 110px 0 90px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: #111827;
+      margin-bottom: 22px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(20px, 3vw, 27px);
+      color: #374151;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 32px;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .button-primary {
+      background-color: #111827;
+      color: white;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .button-secondary {
+      border: 1px solid #d1d5db;
+      color: #374151;
+      background-color: white;
+    }
+
+    .button-secondary:hover {
+      background-color: #f9fafb;
+      transform: translateY(-2px);
+    }
+
+
+    /* ------------------------------
+       SECTIONS
+    ------------------------------ */
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-alt {
+      background-color: #f9fafb;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+      max-width: 700px;
+    }
+
+    .section-label {
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 36px;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      color: #6b7280;
+      font-size: 17px;
+    }
+
+
+    /* ------------------------------
+       PROJECTS
+    ------------------------------ */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      min-height: 390px;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-number {
+      font-size: 13px;
+      color: #9ca3af;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: #111827;
+      margin-bottom: 15px;
+    }
+
+    .project-description {
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 25px;
+    }
+
+    .tag {
+      background-color: #f3f4f6;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: #4b5563;
+      font-weight: 500;
+    }
+
+    .project-link {
+      margin-top: auto;
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* ------------------------------
+       ABOUT
+    ------------------------------ */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: #4b5563;
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .about-details {
+      border-left: 1px solid #e5e7eb;
+      padding-left: 30px;
+    }
+
+    .detail-block {
+      margin-bottom: 28px;
+    }
+
+    .detail-block h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+
+    .detail-block p {
+      color: #374151;
+      font-size: 15px;
+    }
+
+
+    /* ------------------------------
+       SKILLS
+    ------------------------------ */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .skill-group {
+      padding: 22px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .skill-group h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .skill-group p {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+
+    /* ------------------------------
+       CONTACT
+    ------------------------------ */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact h2 {
+      font-size: 42px;
+    }
+
+    .contact p {
+      color: #6b7280;
+      font-size: 17px;
+      margin: 15px 0 28px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid #eeeeee;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 13px;
+    }
+
+
+    /* ------------------------------
+       MOBILE
+    ------------------------------ */
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-details {
+        border-left: none;
+        border-top: 1px solid #e5e7eb;
+        padding-left: 0;
+        padding-top: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        min-height: 62px;
+      }
+
+      .nav-links a:not(:last-child) {
+        display: none;
+      }
+
+      .hero {
+        padding: 80px 0 65px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ==============================
+       NAVIGATION
+  =============================== -->
+
+  <nav>
+    <div class="container nav-container">
+      <a class="nav-name" href="#">Safiya Alavi</a>
+
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a
+          href="https://github.com/safiyazalavi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==============================
+       HERO
+  =============================== -->
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Data Science Portfolio
+        </div>
+
+        <h1>Safiya Alavi</h1>
+
+        <div class="hero-subtitle">
+          Data Science × Machine Learning × Biotechnology
+        </div>
+
+        <p class="hero-description">
+          I build machine learning and data-driven tools at the
+          intersection of biotechnology, healthcare, and investment
+          decision-making.
+        </p>
+
+        <div class="hero-links">
+
+          <a
+            class="button button-primary"
+            href="#projects"
+          >
+            View Projects
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="https://github.com/safiyazalavi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <!-- Replace this link with your LinkedIn URL -->
+          <a
+            class="button button-secondary"
+            href="YOUR_LINKEDIN_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <!-- Upload your resume.pdf to the same repository -->
+          <a
+            class="button button-secondary"
+            href="resume.pdf"
+            target="_blank"
+          >
+            Resume
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==============================
+       PROJECTS
+  =============================== -->
+
+  <section id="projects" class="section-alt">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div class="section-label">
+          Selected Work
+        </div>
+
+        <h2>Featured Projects</h2>
+
+        <p class="section-description">
+          Selected projects spanning biomedical natural language
+          processing, machine learning, biotechnology, and investment
+          analytics.
+        </p>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <article class="project-card">
+
+          <div class="project-number">01</div>
+
+          <h3>
+            Biotech Stock Prediction Using BioBERT & XGBoost
+          </h3>
+
+          <p class="project-description">
+            Developed a machine learning pipeline to predict biotech
+            stock performance from clinical trial press releases,
+            combining domain-specific biomedical language
+            representations with gradient-boosted decision trees.
+          </p>
+
+          <div class="tech-stack">
+            <span class="tag">BioBERT</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Python</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/safiyazalavi/ds266-final-project"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub →
+          </a>
+
+        </article>
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project-card">
+
+          <div class="project-number">02</div>
+
+          <h3>
+            Amgen Internship — Biomedical NLP
+          </h3>
+
+          <p class="project-description">
+            Applied transformer-based natural language processing
+            techniques to biomedical data during my internship at
+            Amgen, exploring machine learning approaches for extracting
+            and classifying information from scientific text.
+          </p>
+
+          <div class="tech-stack">
+            <span class="tag">BERT</span>
+            <span class="tag">Biomedical NLP</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Python</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/safiyazalavi/Project-Portfolio-Repo/tree/main/amgen_internship_project"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub →
+          </a>
+
+        </article>
+
+
+        <!-- PROJECT 3 -->
+
+        <article class="project-card">
+
+          <div class="project-number">03</div>
+
+          <h3>
+            Investment Diversification App
+          </h3>
+
+          <p class="project-description">
+            Built an interactive investment analytics application
+            designed to help users evaluate portfolio diversification,
+            understand asset exposures, and make more informed portfolio
+            allocation decisions.
+          </p>
+
+          <div class="tech-stack">
+            <span class="tag">Python</span>
+            <span class="tag">Investment Analytics</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Portfolio Analysis</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/safiyazalavi/Project-Portfolio-Repo/tree/main/investment-diversification-app/project-3-fardaevm-project"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub →
+          </a>
+
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       ABOUT
+  =============================== -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-label">Background</div>
+        <h2>About Me</h2>
+      </div>
+
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            I am a data scientist with experience applying machine
+            learning, statistical analysis, and financial modeling to
+            biotechnology and healthcare problems.
+          </p>
+
+          <p>
+            My work has included biomedical natural language processing,
+            investment analytics, portfolio modeling, and evaluating
+            clinical-stage biotechnology companies.
+          </p>
+
+          <p>
+            I am particularly interested in using quantitative methods
+            to improve complex strategic and investment decisions in
+            biotechnology.
+          </p>
+
+        </div>
+
+
+        <div class="about-details">
+
+          <div class="detail-block">
+            <h3>Education</h3>
+            <p>
+              M.S. Information & Data Science<br />
+              University of California, Berkeley
+            </p>
+          </div>
+
+          <div class="detail-block">
+            <h3>Undergraduate</h3>
+            <p>
+              B.S. Data Science & Statistics<br />
+              University of California, Santa Barbara
+            </p>
+          </div>
+
+          <div class="detail-block">
+            <h3>Areas of Interest</h3>
+            <p>
+              Biotechnology<br />
+              Machine Learning<br />
+              Investment Analytics<br />
+              Corporate Strategy
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       SKILLS
+  =============================== -->
+
+  <section id="skills" class="section-alt">
+
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-label">Technical Toolkit</div>
+        <h2>Skills</h2>
+      </div>
+
+
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <p>
+            Python<br />
+            R<br />
+            SQL<br />
+            HTML / CSS
+          </p>
+        </div>
+
+
+        <div class="skill-group">
+          <h3>Machine Learning</h3>
+          <p>
+            XGBoost<br />
+            Classification<br />
+            Deep Learning<br />
+            Model Evaluation
+          </p>
+        </div>
+
+
+        <div class="skill-group">
+          <h3>NLP</h3>
+          <p>
+            BERT<br />
+            BioBERT<br />
+            Transformers<br />
+            Biomedical NLP
+          </p>
+        </div>
+
+
+        <div class="skill-group">
+          <h3>Analytics</h3>
+          <p>
+            Financial Modeling<br />
+            Portfolio Analytics<br />
+            Data Visualization<br />
+            Statistical Analysis
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       CONTACT
+  =============================== -->
+
+  <section class="contact">
+
+    <div class="container contact-content">
+
+      <div class="section-label">
+        Contact
+      </div>
+
+      <h2>Let's Connect</h2>
+
+      <p>
+        Interested in biotechnology, data science, machine learning,
+        investment analytics, or strategy? Feel free to connect with me.
+      </p>
+
+      <div class="contact-links">
+
+        <!-- Replace with your email -->
+        <a
+          class="button button-primary"
+          href="mailto:YOUR_EMAIL_ADDRESS"
+        >
+          Email Me
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="https://github.com/safiyazalavi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <!-- Replace with your LinkedIn URL -->
+        <a
+          class="button button-secondary"
+          href="YOUR_LINKEDIN_URL"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==============================
+       FOOTER
+  =============================== -->
+
+  <footer>
+    <div class="container">
+      © 2026 Safiya Alavi
+    </div>
+  </footer>
+
+
+</body>
+</html>
