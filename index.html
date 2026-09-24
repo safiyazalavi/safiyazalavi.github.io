@@ -69,7 +69,19 @@
       justify-content: space-between; gap: 30px;
     }
     .brand { display: flex; align-items: center; gap: 13px; color: var(--walnut); }
-
+    .brand-mark {
+      display: grid; place-items: center; width: 39px; height: 39px;
+      background: var(--walnut); color: var(--paper);
+      font: 400 16px var(--serif); letter-spacing: -.05em;
+    }
+    .brand-name { font-family: var(--serif); font-size: 14px; letter-spacing: -.02em; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 31px; }
+    .nav-links a { font-size: 12px; font-weight: 600; color: var(--body); transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--teal); }
+    .nav-links .nav-contact {
+      padding: 9px 16px; border: 1px solid #9eaaa2;
+      color: var(--teal-dark); transition: background .2s ease, color .2s ease;
+    }
     .nav-links .nav-contact:hover { background: var(--sea-glass); color: var(--teal-dark); }
 
     /* Intro */
