@@ -1,1664 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f9f7f2" />
+  <meta name="description" content="Safiya Alavi — data science, biomedical machine learning, and investment analytics. Explore selected projects and experience." />
+  <title>Safiya Alavi — Data Science & Biotechnology</title>
 
-  <title>Safiya Alavi | Data Science & Biotechnology</title>
-
-  <meta
-    name="description"
-    content="Safiya Alavi's portfolio featuring machine learning, biomedical NLP, biotechnology, and investment analytics projects."
-  />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Google Fonts. System fonts are used if these cannot load. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
-
-    /* ==========================================================
-       COLOR SYSTEM
-    ========================================================== */
-
     :root {
-      --cream: #f6f1e8;
-      --cream-light: #fcfaf6;
-      --cream-dark: #ede5d8;
-
-      --turquoise: #a9d2cb;
-      --turquoise-light: #dcece8;
-      --turquoise-dark: #477b74;
-
-      --brown: #59463a;
-      --brown-medium: #806858;
-      --brown-light: #b5a293;
-
-      --ink: #342c27;
-      --text: #5d524b;
-      --muted: #867b73;
-
-      --white: #ffffff;
-
-      --border: rgba(89, 70, 58, 0.14);
-
-      --shadow:
-        0 18px 50px rgba(70, 55, 45, 0.08);
-
-      --shadow-hover:
-        0 25px 65px rgba(70, 55, 45, 0.14);
+      --page: #f9f7f2;
+      --paper: #fffefa;
+      --cream: #f0ece3;
+      --sea-glass: #d5e8e1;
+      --sea-glass-light: #edf5f1;
+      --teal: #3d716a;
+      --teal-dark: #2d5651;
+      --walnut: #453a32;
+      --ink: #2e302d;
+      --body: #55564f;
+      --muted: #797970;
+      --line: #dedcd3;
+      --serif: "Libre Baskerville", Georgia, serif;
+      --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-
-    /* ==========================================================
-       GLOBAL
-    ========================================================== */
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--text);
-      background-color: var(--cream-light);
-      line-height: 1.7;
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 400 16px/1.7 var(--sans);
       -webkit-font-smoothing: antialiased;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 4px; }
+    ::selection { background: var(--sea-glass); color: var(--walnut); }
+    .wrap { width: min(1160px, calc(100% - 76px)); margin-inline: auto; }
+    .skip-link {
+      position: absolute; left: -9999px; top: 12px; z-index: 100;
+      padding: 10px 14px; background: var(--walnut); color: #fff;
     }
-
-    .container {
-      width: min(1120px, 88%);
-      margin: 0 auto;
-    }
-
-    h1,
-    h2,
-    h3 {
-      color: var(--ink);
-    }
-
-
-    /* ==========================================================
-       NAVIGATION
-    ========================================================== */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      background: rgba(252, 250, 246, 0.91);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-container {
-      min-height: 76px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 30px;
-    }
-
-    .nav-name {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      font-weight: 600;
-
-      color: var(--brown);
-      letter-spacing: -0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-
-      gap: 30px;
-
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .nav-links a {
-      color: var(--brown-medium);
-
-      position: relative;
-
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-
-      width: 0;
-      height: 1px;
-
-      background: var(--turquoise-dark);
-
-      transition: width 0.25s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--turquoise-dark);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-
-    /* ==========================================================
-       HERO
-    ========================================================== */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-
-      padding: 115px 0 105px;
-
-      background:
-        radial-gradient(
-          circle at 80% 15%,
-          rgba(169, 210, 203, 0.30),
-          transparent 30%
-        ),
-        linear-gradient(
-          135deg,
-          #fcfaf6 0%,
-          #f6f1e8 65%,
-          #f2ebe1 100%
-        );
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 420px;
-      height: 420px;
-
-      border-radius: 50%;
-
-      background: rgba(169, 210, 203, 0.13);
-
-      right: -180px;
-      top: -170px;
-    }
-
-    .hero-layout {
-      position: relative;
-      z-index: 2;
-
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.35fr)
-        minmax(280px, 0.65fr);
-
-      align-items: center;
-
-      gap: 90px;
-    }
-
-    .hero-content {
-      max-width: 720px;
-    }
-
+    .skip-link:focus { left: 16px; }
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-
-      color: var(--turquoise-dark);
-
-      font-size: 12px;
-      font-weight: 700;
-
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-
-      margin-bottom: 24px;
+      display: inline-flex; align-items: center; gap: 13px;
+      color: var(--teal); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .16em;
     }
+    .eyebrow::before { content: ""; display: block; width: 26px; height: 1px; background: currentColor; }
+    .serif { font-family: var(--serif); letter-spacing: -.045em; font-weight: 400; }
 
-    .eyebrow::before {
-      content: "";
-
-      width: 32px;
-      height: 1px;
-
-      background: var(--turquoise-dark);
+    /* Navigation */
+    .site-header {
+      background: rgba(249, 247, 242, .97);
+      border-bottom: 1px solid var(--line);
+      position: relative; z-index: 20;
     }
-
-    h1 {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(54px, 7vw, 82px);
-
-      font-weight: 600;
-
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-
-      color: var(--brown);
-
-      margin-bottom: 24px;
+    .nav {
+      min-height: 79px; display: flex; align-items: center;
+      justify-content: space-between; gap: 30px;
     }
-
-    .hero-subtitle {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(21px, 2.5vw, 29px);
-
-      line-height: 1.4;
-
-      color: var(--turquoise-dark);
-
-      margin-bottom: 24px;
+    .brand { display: flex; align-items: center; gap: 13px; color: var(--walnut); }
+    .brand-mark {
+      display: grid; place-items: center; width: 39px; height: 39px;
+      background: var(--walnut); color: var(--paper);
+      font: 400 16px var(--serif); letter-spacing: -.05em;
     }
+    .brand-name { font-family: var(--serif); font-size: 14px; letter-spacing: -.02em; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 31px; }
+    .nav-links a { font-size: 12px; font-weight: 600; color: var(--body); transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--teal); }
+    .nav-links .nav-contact {
+      padding: 9px 16px; border: 1px solid #9eaaa2;
+      color: var(--teal-dark); transition: background .2s ease, color .2s ease;
+    }
+    .nav-links .nav-contact:hover { background: var(--sea-glass); color: var(--teal-dark); }
 
+    /* Intro */
+    .hero { border-bottom: 1px solid var(--line); }
+    .hero-grid {
+      padding-block: clamp(69px, 8.5vw, 122px) clamp(79px, 9vw, 117px);
+      display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(290px, .72fr);
+      column-gap: clamp(65px, 9vw, 143px); align-items: center;
+    }
+    .hero h1 {
+      color: var(--walnut); font: 400 clamp(51px, 5.9vw, 85px)/1.14 var(--serif);
+      letter-spacing: -.065em; margin: 23px 0 17px;
+    }
+    .hero h1 span { color: var(--teal); }
+    .hero-lede {
+      font: 400 clamp(21px, 2.05vw, 27px)/1.5 var(--serif);
+      letter-spacing: -.04em; max-width: 580px; color: var(--walnut);
+      margin: 0 0 18px;
+    }
     .hero-description {
-      max-width: 650px;
-
-      font-size: 17px;
-
-      line-height: 1.85;
-
-      color: var(--text);
-
-      margin-bottom: 34px;
+      max-width: 570px; color: var(--body); font-size: 15px;
+      line-height: 1.9; margin: 0 0 34px;
     }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 12px;
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+    .cta {
+      min-height: 49px; display: inline-flex; align-items: center;
+      gap: 21px; padding: 0 21px; background: var(--teal-dark);
+      color: #fff; font-size: 12px; font-weight: 700;
+      transition: background .2s ease, transform .2s ease;
     }
-
-
-    /* ==========================================================
-       HEADSHOT
-    ========================================================== */
-
-    .headshot-wrapper {
-      position: relative;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .cta:hover { background: var(--walnut); transform: translateY(-2px); }
+    .text-link {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 12px; font-weight: 700; color: var(--teal-dark);
+      border-bottom: 1px solid currentColor; padding-bottom: 3px;
+      transition: color .2s ease;
     }
-
-    .headshot-backdrop {
-      position: absolute;
-
-      width: 310px;
-      height: 390px;
-
-      border-radius: 160px 160px 30px 30px;
-
-      background: var(--turquoise);
-
-      transform: rotate(5deg);
-
-      opacity: 0.72;
+    .text-link:hover { color: var(--walnut); }
+    .portrait-composition { position: relative; width: min(100%, 364px); margin-inline: auto; }
+    .portrait-composition::before {
+      content: ""; position: absolute; top: -20px; right: -20px; bottom: 20px; left: 20px;
+      border: 1px solid #98bcb0; background: var(--sea-glass-light);
     }
-
-    .headshot-frame {
-      position: relative;
-      z-index: 2;
-
-      width: 300px;
-      height: 390px;
-
-      overflow: hidden;
-
-      border-radius: 160px 160px 28px 28px;
-
-      border: 8px solid rgba(255, 255, 255, 0.72);
-
-      box-shadow: var(--shadow);
+    .portrait {
+      position: relative; background: var(--sea-glass);
+      aspect-ratio: 4 / 5; overflow: hidden;
     }
-
-    .headshot-frame img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      display: block;
+    .portrait img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 26%;
+      position: relative; z-index: 2;
     }
-
-    .headshot-accent {
-      position: absolute;
-
-      width: 75px;
-      height: 75px;
-
-      border-radius: 50%;
-
-      background: var(--brown-light);
-
-      bottom: -20px;
-      left: 10px;
-
-      opacity: 0.45;
+    .portrait-fallback {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      font: 400 80px var(--serif); color: #7faca1; z-index: 1;
     }
-
-
-    /* ==========================================================
-       BUTTONS
-    ========================================================== */
-
-    .button {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      min-height: 46px;
-
-      padding: 0 21px;
-
-      border-radius: 999px;
-
-      font-size: 13px;
-      font-weight: 600;
-
-      letter-spacing: 0.01em;
-
-      transition:
-        transform 0.22s ease,
-        box-shadow 0.22s ease,
-        background-color 0.22s ease,
-        color 0.22s ease;
+    .portrait-caption {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; margin-top: 16px; font-size: 10px; font-weight: 700;
+      color: var(--muted); letter-spacing: .13em; text-transform: uppercase;
     }
+    .caption-rule { display: block; flex: 1; height: 1px; background: var(--line); }
 
-    .button-primary {
-      background: var(--brown);
-      color: var(--cream-light);
+    /* Work: editorial project list */
+    .work { background: var(--paper); padding-block: 108px 114px; }
+    .section-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(55px, 8vw, 110px); }
+    .section-title {
+      font: 400 clamp(33px, 3.5vw, 46px)/1.25 var(--serif);
+      letter-spacing: -.055em; color: var(--walnut); margin: 19px 0 18px;
     }
-
-    .button-primary:hover {
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 10px 25px rgba(89, 70, 58, 0.18);
-
-      background: #49382f;
+    .section-intro { color: var(--muted); font-size: 13px; line-height: 1.95; max-width: 245px; margin: 0; }
+    .project-list { border-top: 1px solid var(--line); }
+    .project {
+      padding: 29px 0 30px; border-bottom: 1px solid var(--line);
+      display: grid; grid-template-columns: 36px minmax(0, 1fr) 38px;
+      gap: 23px; transition: background-color .2s ease;
     }
-
-    .button-secondary {
-      border: 1px solid rgba(89, 70, 58, 0.24);
-
-      color: var(--brown);
-
-      background: rgba(255, 255, 255, 0.5);
+    .project:hover { background: linear-gradient(90deg, transparent, #f4f8f5 38%, transparent); }
+    .project-index { font: 600 11px var(--sans); letter-spacing: .08em; color: var(--teal); padding-top: 4px; }
+    .project-type {
+      display: block; font-size: 10px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
     }
-
-    .button-secondary:hover {
-      transform: translateY(-2px);
-
-      background: var(--turquoise-light);
-
-      color: var(--turquoise-dark);
-
-      border-color: var(--turquoise);
+    .project h3 {
+      font: 400 clamp(20px, 2.1vw, 27px)/1.4 var(--serif);
+      letter-spacing: -.04em; color: var(--walnut);
+      margin: 0 0 12px; max-width: 660px;
     }
-
-
-    /* ==========================================================
-       SECTIONS
-    ========================================================== */
-
-    section {
-      padding: 105px 0;
+    .project p {
+      margin: 0 0 17px; font-size: 13px; line-height: 1.85;
+      color: var(--body); max-width: 590px;
     }
-
-    .section-alt {
-      background: var(--cream);
+    .project-tech { font-size: 11px; font-weight: 600; color: var(--teal-dark); line-height: 1.7; }
+    .project-tech span + span::before { content: " / "; color: #96a9a1; margin-inline: 5px; }
+    .project-go {
+      width: 36px; height: 36px; border: 1px solid #b7c8bf;
+      display: grid; place-items: center; color: var(--teal-dark);
+      font-size: 17px; transition: background .2s ease, color .2s ease;
     }
-
-    .section-header {
-      max-width: 720px;
-
-      margin-bottom: 52px;
-    }
-
-    .section-label {
-      color: var(--turquoise-dark);
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.16em;
-
-      font-size: 11px;
-      font-weight: 700;
-
-      margin-bottom: 13px;
-    }
-
-    h2 {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(38px, 5vw, 52px);
-
-      font-weight: 600;
-
-      letter-spacing: -0.035em;
-
-      line-height: 1.15;
-
-      color: var(--brown);
-
-      margin-bottom: 16px;
-    }
-
-    .section-description {
-      color: var(--muted);
-
-      font-size: 16px;
-
-      line-height: 1.85;
-    }
-
-
-    /* ==========================================================
-       PROJECTS
-    ========================================================== */
-
-    .projects-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 24px;
-    }
-
-    .project-card {
-      position: relative;
-
-      display: flex;
-      flex-direction: column;
-
-      min-height: 420px;
-
-      padding: 32px;
-
-      background: rgba(252, 250, 246, 0.94);
-
-      border: 1px solid rgba(89, 70, 58, 0.10);
-
-      border-radius: 22px;
-
-      overflow: hidden;
-
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-    }
-
-    .project-card::before {
-      content: "";
-
-      position: absolute;
-
-      width: 110px;
-      height: 110px;
-
-      border-radius: 50%;
-
-      background: rgba(169, 210, 203, 0.16);
-
-      right: -40px;
-      top: -40px;
-    }
-
-    .project-card:hover {
-      transform: translateY(-7px);
-
-      box-shadow: var(--shadow-hover);
-
-      border-color: rgba(71, 123, 116, 0.25);
-    }
-
-    .project-number {
-      width: 38px;
-      height: 38px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background: var(--turquoise-light);
-
-      color: var(--turquoise-dark);
-
-      font-size: 11px;
-      font-weight: 700;
-
-      margin-bottom: 25px;
-    }
-
-    .project-card h3 {
-      font-family: "Playfair Display", serif;
-
-      font-size: 24px;
-
-      line-height: 1.35;
-
-      font-weight: 600;
-
-      color: var(--brown);
-
-      margin-bottom: 16px;
-    }
-
-    .project-description {
-      color: var(--text);
-
-      font-size: 14px;
-
-      line-height: 1.8;
-
-      margin-bottom: 23px;
-    }
-
-    .tech-stack {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 7px;
-
-      margin-bottom: 27px;
-    }
-
-    .tag {
-      padding: 6px 11px;
-
-      border-radius: 999px;
-
-      font-size: 11px;
-      font-weight: 600;
-
-      color: var(--brown-medium);
-
-      background: #eee5db;
-
-      border: 1px solid rgba(89, 70, 58, 0.06);
-    }
-
-    .project-link {
-      margin-top: auto;
-
-      color: var(--turquoise-dark);
-
-      font-size: 13px;
-      font-weight: 700;
-
-      letter-spacing: 0.01em;
-
-      transition: color 0.2s ease;
-    }
-
-    .project-link:hover {
-      color: var(--brown);
-    }
-
-
-    /* ==========================================================
-       ABOUT
-    ========================================================== */
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns: 1.35fr 0.8fr;
-
-      gap: 90px;
-
-      align-items: start;
-    }
-
-    .about-text {
-      position: relative;
-    }
-
-    .about-text::before {
-      content: "“";
-
-      position: absolute;
-
-      left: -25px;
-      top: -35px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: 100px;
-
-      line-height: 1;
-
-      color: rgba(169, 210, 203, 0.35);
-
-      z-index: -1;
-    }
-
-    .about-text p {
-      color: var(--text);
-
-      font-size: 17px;
-
-      line-height: 1.95;
-
-      margin-bottom: 19px;
-    }
-
-    .about-details {
-      padding: 33px;
-
-      border-radius: 20px;
-
-      background: var(--cream);
-
-      border: 1px solid var(--border);
-    }
-
-    .detail-block {
-      padding-bottom: 23px;
-      margin-bottom: 23px;
-
-      border-bottom: 1px solid rgba(89, 70, 58, 0.10);
-    }
-
-    .detail-block:last-child {
-      border-bottom: none;
-
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .detail-block h3 {
-      color: var(--turquoise-dark);
-
-      font-size: 10px;
-
-      font-weight: 700;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.14em;
-
-      margin-bottom: 8px;
-    }
-
-    .detail-block p {
-      color: var(--brown-medium);
-
-      font-size: 14px;
-
-      line-height: 1.75;
-    }
-
-
-    /* ==========================================================
-       SKILLS
-    ========================================================== */
-
-    .skills-grid {
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 18px;
-    }
-
-    .skill-group {
-      padding: 27px 24px;
-
-      border-radius: 18px;
-
-      background: var(--cream-light);
-
-      border: 1px solid var(--border);
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background-color 0.25s ease;
-    }
-
-    .skill-group:hover {
-      transform: translateY(-4px);
-
-      border-color: rgba(71, 123, 116, 0.25);
-
-      background: #ffffff;
-    }
-
-    .skill-group h3 {
-      font-family: "Playfair Display", serif;
-
-      font-size: 19px;
-
-      font-weight: 600;
-
-      color: var(--brown);
-
-      margin-bottom: 13px;
-    }
-
-    .skill-group p {
-      color: var(--muted);
-
-      font-size: 13px;
-
-      line-height: 2;
-    }
-
-
-    /* ==========================================================
-       CONTACT
-    ========================================================== */
-
-    .contact {
-      position: relative;
-
-      overflow: hidden;
-
-      text-align: center;
-
-      background: var(--turquoise-light);
-    }
-
-    .contact::before {
-      content: "";
-
-      position: absolute;
-
-      width: 380px;
-      height: 380px;
-
-      border-radius: 50%;
-
-      background: rgba(255, 255, 255, 0.28);
-
-      left: -160px;
-      top: -160px;
-    }
-
-    .contact-content {
-      position: relative;
-      z-index: 2;
-
-      max-width: 720px;
-
-      margin: 0 auto;
-    }
-
+    .project-go:hover, .project-go:focus-visible { background: var(--teal-dark); color: white; }
+    .project-access { display: inline-block; margin-top: 15px; color: var(--teal-dark); font-size: 11px; font-weight: 700; letter-spacing: .025em; }
+    .project-access:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* About */
+    .about { padding-block: 107px 112px; background: var(--sea-glass-light); border-block: 1px solid #d7e5de; }
+    .about-grid { display: grid; grid-template-columns: 1.15fr .76fr; gap: clamp(70px, 11vw, 157px); }
+    .about h2 { max-width: 500px; }
+    .about-copy { font-size: 15px; line-height: 2; color: var(--body); max-width: 625px; }
+    .about-copy p { margin: 0 0 19px; }
+    .about-aside { border-top: 2px solid var(--teal-dark); align-self: start; margin-top: 10px; }
+    .about-info { padding: 23px 0; border-bottom: 1px solid #c7d6ce; }
+    .about-info h3 { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); margin: 0 0 10px; }
+    .about-info p { margin: 0; font-size: 13px; line-height: 1.8; color: var(--walnut); }
+    .about-info strong { font-weight: 700; }
+
+    /* Expertise */
+    .expertise { padding-block: 99px 109px; background: var(--paper); }
+    .expertise-header { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 43px; }
+    .expertise-header .section-title { margin-bottom: 0; }
+    .expertise-header p { max-width: 350px; margin: 0 0 4px; font-size: 13px; color: var(--muted); line-height: 1.75; }
+    .skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .skill { padding: 26px 24px 23px 0; }
+    .skill + .skill { border-left: 1px solid var(--line); padding-left: 26px; }
+    .skill h3 { font: 400 17px/1.5 var(--serif); color: var(--walnut); margin: 0 0 10px; }
+    .skill p { font-size: 12px; color: var(--muted); line-height: 1.95; margin: 0; }
+
+    /* Contact */
+    .contact { padding-block: 80px 88px; background: var(--walnut); color: #f7f3ec; }
+    .contact-grid { display: flex; align-items: end; justify-content: space-between; gap: 35px; }
+    .contact .eyebrow { color: #add0c3; }
     .contact h2 {
-      font-size: clamp(40px, 5vw, 54px);
+      font: 400 clamp(36px, 4.7vw, 61px)/1.25 var(--serif);
+      letter-spacing: -.055em; margin: 17px 0 0; max-width: 620px;
     }
+    .contact-actions { display: flex; align-items: center; gap: 24px; padding-bottom: 5px; flex-wrap: wrap; }
+    .contact-actions a { color: #f5f0e8; font-weight: 700; font-size: 12px; white-space: nowrap; border-bottom: 1px solid #b7ccbf; padding-bottom: 7px; }
+    .contact-actions a:hover { color: #bbe2d4; }
+    .footer { background: #392f29; color: #d5cec4; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 23px; font-size: 11px; letter-spacing: .02em; }
+    .footer a:hover { color: #b8ded1; }
 
-    .contact-links {
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 12px;
-
-      margin-top: 30px;
+    @media (max-width: 1000px) {
+      .hero-grid { column-gap: 47px; }
+      .section-layout { grid-template-columns: 205px minmax(0, 1fr); gap: 50px; }
+      .about-grid { gap: 58px; }
     }
-
-
-    /* ==========================================================
-       FOOTER
-    ========================================================== */
-
-    footer {
-      padding: 32px 0;
-
-      background: var(--brown);
-
-      color: rgba(255, 255, 255, 0.62);
-
-      text-align: center;
-
-      font-size: 12px;
-
-      letter-spacing: 0.05em;
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 40px, 560px); }
+      .nav { min-height: 72px; }
+      .nav-links { gap: 17px; }
+      .nav-links .optional-nav { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 65px; padding-block: 70px 81px; }
+      .hero h1 { font-size: clamp(52px, 10vw, 72px); }
+      .hero-lede { font-size: 23px; }
+      .portrait-composition { width: min(calc(100% - 24px), 320px); margin-inline: 0; }
+      .section-layout { grid-template-columns: 1fr; gap: 36px; }
+      .section-intro { max-width: 460px; }
+      .work, .about, .expertise { padding-block: 78px 84px; }
+      .about-grid { grid-template-columns: 1fr; gap: 34px; }
+      .expertise-header { display: block; }
+      .expertise-header p { margin-top: 17px; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .skill:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+      .skill:nth-child(4) { border-top: 1px solid var(--line); }
+      .contact-grid { display: block; }
+      .contact-actions { margin-top: 34px; }
     }
-
-
-    /* ==========================================================
-       RESPONSIVE
-    ========================================================== */
-
-    @media (max-width: 950px) {
-
-      .hero-layout {
-        grid-template-columns: 1fr;
-
-        gap: 65px;
-      }
-
-      .headshot-wrapper {
-        justify-content: flex-start;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .project-card {
-        min-height: auto;
-      }
+    @media (max-width: 460px) {
+      .brand-name { font-size: 12px; }
+      .brand-mark { height: 35px; width: 35px; font-size: 14px; }
+      .nav-links { gap: 13px; }
+      .nav-links a { font-size: 11px; }
+      .nav-links .nav-contact { padding: 6px 10px; }
+      .hero-actions { gap: 19px; }
+      .hero h1 { font-size: 48px; }
+      .hero-lede { font-size: 21px; }
+      .project { grid-template-columns: 26px minmax(0, 1fr); gap: 10px; }
+      .project-go { grid-column: 2; justify-self: start; }
+      .skill-grid { grid-template-columns: 1fr; }
+      .skill + .skill { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+      .footer-row { flex-wrap: wrap; }
     }
-
-
-    @media (max-width: 650px) {
-
-      .container {
-        width: min(90%, 1120px);
-      }
-
-      .nav-container {
-        min-height: 66px;
-      }
-
-      .nav-links {
-        gap: 17px;
-      }
-
-      .nav-links a:nth-child(2),
-      .nav-links a:nth-child(3) {
-        display: none;
-      }
-
-      .hero {
-        padding: 80px 0 75px;
-      }
-
-      .hero-layout {
-        gap: 50px;
-      }
-
-      .headshot-wrapper {
-        justify-content: center;
-      }
-
-      .headshot-frame {
-        width: 250px;
-        height: 325px;
-      }
-
-      .headshot-backdrop {
-        width: 260px;
-        height: 335px;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        padding: 27px;
-      }
-
-      .hero-description {
-        font-size: 16px;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
-
   </style>
 </head>
-
-
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-
-  <!-- ==========================================================
-       NAVIGATION
-  ========================================================== -->
-
-  <nav>
-
-    <div class="container nav-container">
-
-
-      <div class="nav-links">
-
-        <a href="#projects">
-          Projects
-        </a>
-
-        <a href="#about">
-          About
-        </a>
-
-        <a href="#skills">
-          Skills
-        </a>
-
-        <a
-          href="https://github.com/safiyazalavi"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-      </div>
-
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Safiya Alavi, back to top">
+        <span class="brand-mark" aria-hidden="true">SA</span>
+        <span class="brand-name">Safiya Alavi</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#work">Projects</a>
+        <a href="#about">About</a>
+        <a class="optional-nav" href="#expertise">Expertise</a>
+        <a class="optional-nav" href="https://github.com/safiyazalavi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
     </div>
-
-  </nav>
-
-
-
-  <!-- ==========================================================
-       HERO
-  ========================================================== -->
-
-  <header class="hero">
-
-    <div class="container">
-
-      <div class="hero-layout">
-
-
-        <!-- HERO TEXT -->
-
-        <div class="hero-content">
-
-          <div class="eyebrow">
-            Data Science Portfolio
-          </div>
-
-
-          <h1>
-            Safiya Alavi
-          </h1>
-
-
-          <div class="hero-subtitle">
-            Data Science × Machine Learning × Biotechnology
-          </div>
-
-
-          <p class="hero-description">
-            I build machine learning and data-driven tools at the
-            intersection of biotechnology and investment decision-making.
-          </p>
-
-
-          <div class="hero-links">
-
-            <a
-              class="button button-primary"
-              href="#projects"
-            >
-              Explore My Work
-            </a>
-
-
-            <a
-              class="button button-secondary"
-              href="https://github.com/safiyazalavi"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-
-
-            <a
-              class="button button-secondary"
-              href="https://www.linkedin.com/in/safiyaalavi/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- HEADSHOT -->
-
-        <div class="headshot-wrapper">
-
-          <div class="headshot-backdrop"></div>
-
-          <div class="headshot-accent"></div>
-
-          <div class="headshot-frame">
-
-            <img
-              src="./headshot-2025.jpg"
-              alt="Safiya Alavi"
-            />
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
   </header>
 
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Data Science · Biotechnology · Investing</div>
+          <h1 id="hero-heading">Safiya Alavi<span>.</span></h1>
+          <p class="hero-lede">Data Science × Machine Learning × Biotechnology</p>
+          <p class="hero-description">
+            I bridge biotechnology investing and data science, turning complex data into actionable insights that drive investment and strategic decisions.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="cta">View selected work <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/safiyaalavi/" class="text-link" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="portrait-composition">
+          <div class="portrait">
+            <span class="portrait-fallback" aria-hidden="true">SA</span>
+            <img src="./headshot-2025.jpg" alt="Portrait of Safiya Alavi" onerror="this.style.display='none'" />
+          </div>
+          <div class="portrait-caption">
+            <span>Data science &amp; biotechnology</span>
+            <span class="caption-rule" aria-hidden="true"></span>
+            <span>Portfolio</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-  <!-- ==========================================================
-       PROJECTS
-  ========================================================== -->
-
-  <section
-    id="projects"
-    class="section-alt"
-  >
-
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <div class="section-label">
-          Selected Work
+    <section class="work" id="work" aria-labelledby="work-heading">
+      <div class="wrap section-layout">
+        <div class="section-side">
+          <div class="eyebrow">01 / Selected work</div>
+          <h2 class="section-title" id="work-heading">Projects with purpose.</h2>
+          <p class="section-intro">A selection of projects spanning biomedical NLP, predictive modeling, distributed computing, and investment analytics.</p>
         </div>
 
-        <h2>
-          Featured Projects
-        </h2>
+        <div class="project-list">
+          <article class="project">
+            <span class="project-index">01</span>
+            <div>
+              <span class="project-type">Biotechnology / Natural language processing</span>
+              <h3>Biotech Stock Prediction with BioBERT &amp; XGBoost</h3>
+              <p>A machine learning pipeline using biomedical language representations from clinical-trial press releases alongside gradient-boosted models to predict biotech stock performance.</p>
+              <div class="project-tech"><span>BioBERT</span><span>XGBoost</span><span>Python</span><span>NLP</span></div>
+              <a class="project-access" href="https://github.com/safiyazalavi/ds266-final-project" target="_blank" rel="noopener noreferrer">Explore repository ↗</a>
+            </div>
+            <a class="project-go" href="https://github.com/safiyazalavi/ds266-final-project" target="_blank" rel="noopener noreferrer" aria-label="Open BioBERT and XGBoost project on GitHub">↗</a>
+          </article>
 
+          <article class="project">
+            <span class="project-index">02</span>
+            <div>
+              <span class="project-type">Industry research / Biomedical NLP</span>
+              <h3>Amgen Internship — Biomedical NLP</h3>
+              <p>Applying transformer-based language models to biomedical text to explore approaches for information extraction and classification during my internship at Amgen.</p>
+              <div class="project-tech"><span>BERT</span><span>Transformers</span><span>Biomedical NLP</span></div>
+              <!-- Upload amgen.pdf next to index.html for this link to work. -->
+              <a class="project-access" href="./amgen.pdf" target="_blank" rel="noopener noreferrer">View poster presentation ↗</a>
+            </div>
+            <a class="project-go" href="./amgen.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Amgen internship poster presentation">↗</a>
+          </article>
+
+          <article class="project">
+            <span class="project-index">03</span>
+            <div>
+              <span class="project-type">Application development / Investment analytics</span>
+              <h3>Investment Diversification App</h3>
+              <p>An interactive analytics application for evaluating portfolio diversification, understanding asset exposures, and exploring investment-allocation decisions.</p>
+              <div class="project-tech"><span>Python</span><span>Portfolio analysis</span><span>Data visualization</span></div>
+              <a class="project-access" href="https://github.com/safiyazalavi/Project-Portfolio-Repo/tree/main/investment-diversification-app/project-3-fardaevm-project" target="_blank" rel="noopener noreferrer">Explore repository ↗</a>
+            </div>
+            <a class="project-go" href="https://github.com/safiyazalavi/Project-Portfolio-Repo/tree/main/investment-diversification-app/project-3-fardaevm-project" target="_blank" rel="noopener noreferrer" aria-label="Open investment diversification app on GitHub">↗</a>
+          </article>
+
+          <article class="project">
+            <span class="project-index">04</span>
+            <div>
+              <span class="project-type">Machine learning / Distributed computing</span>
+              <h3>Flight Delay Prediction</h3>
+              <p>A large-scale machine learning project predicting commercial flight delays from historical flight and weather data, emphasizing feature engineering, distributed computing, and evaluation.</p>
+              <div class="project-tech"><span>PySpark</span><span>Machine learning</span><span>Feature engineering</span></div>
+              <a class="project-access" href="https://safiyazalavi.github.io/flight-delay-prediction.html" target="_blank" rel="noopener noreferrer">Read final report ↗</a>
+            </div>
+            <a class="project-go" href="https://safiyazalavi.github.io/flight-delay-prediction.html" target="_blank" rel="noopener noreferrer" aria-label="Open rendered flight delay prediction final report">↗</a>
+          </article>
+        </div>
       </div>
+    </section>
 
-
-
-      <div class="projects-grid">
-
-
-        <!-- PROJECT 1 -->
-
-        <article class="project-card">
-
-          <div class="project-number">
-            01
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="wrap about-grid">
+        <div>
+          <div class="eyebrow">02 / Background</div>
+          <div class="about-copy">
+            <p>I am a data scientist with experience applying machine learning, statistical analysis, and financial modeling to biotechnology and healthcare questions.</p>
+            <p>My work spans biomedical NLP, investment analytics, portfolio modeling, and the evaluation of clinical-stage biotechnology companies.</p>
+            <p>I'm particularly interested in turning rigorous quantitative work into clearer strategic and investment decisions.</p>
           </div>
-
-          <h3>
-            Biotech Stock Prediction Using BioBERT & XGBoost
-          </h3>
-
-          <p class="project-description">
-            Developed a machine learning pipeline to predict biotech
-            stock performance from clinical trial press releases,
-            combining domain-specific biomedical language
-            representations with gradient-boosted decision trees.
-          </p>
-
-
-          <div class="tech-stack">
-
-            <span class="tag">
-              BioBERT
-            </span>
-
-            <span class="tag">
-              XGBoost
-            </span>
-
-            <span class="tag">
-              NLP
-            </span>
-
-            <span class="tag">
-              Machine Learning
-            </span>
-
-            <span class="tag">
-              Python
-            </span>
-
+        </div>
+        <div class="about-aside" aria-label="Education and interests">
+          <div class="about-info">
+            <h3>Graduate education</h3>
+            <p><strong>University of California, Berkeley</strong><br />M.S. Information &amp; Data Science</p>
           </div>
-
-
-          <a
-            class="project-link"
-            href="https://github.com/safiyazalavi/ds266-final-project"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Explore Project →
-          </a>
-
-        </article>
-
-
-
-        <!-- PROJECT 2 -->
-
-        <article class="project-card">
-
-          <div class="project-number">
-            02
+          <div class="about-info">
+            <h3>Undergraduate education</h3>
+            <p><strong>University of California, Santa Barbara</strong><br />B.S. Data Science &amp; Statistics</p>
           </div>
-
-          <h3>
-            Amgen Internship — Biomedical NLP
-          </h3>
-
-          <p class="project-description">
-            Applied transformer-based natural language processing
-            techniques to biomedical data during my internship at
-            Amgen, exploring machine learning approaches for extracting
-            and classifying information from scientific text.
-          </p>
-
-
-          <div class="tech-stack">
-
-            <span class="tag">
-              BERT
-            </span>
-
-            <span class="tag">
-              Biomedical NLP
-            </span>
-
-            <span class="tag">
-              Transformers
-            </span>
-
-            <span class="tag">
-              Deep Learning
-            </span>
-
-            <span class="tag">
-              Python
-            </span>
-
+          <div class="about-info">
+            <h3>Areas of interest</h3>
+            <p>Biotechnology · Machine learning<br />Investment analytics · Corporate strategy</p>
           </div>
-
-
-          <a
-            class="project-link"
-            href="./amgen.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Poster Presentation →
-          </a>
-
-        </article>
-
-
-
-        <!-- PROJECT 3 -->
-
-        <article class="project-card">
-
-          <div class="project-number">
-            03
-          </div>
-
-          <h3>
-            Investment Diversification App
-          </h3>
-
-          <p class="project-description">
-            Built an interactive investment analytics application
-            designed to help users evaluate portfolio diversification,
-            understand asset exposures, and make more informed portfolio
-            allocation decisions.
-          </p>
-
-
-          <div class="tech-stack">
-
-            <span class="tag">
-              Python
-            </span>
-
-            <span class="tag">
-              Investment Analytics
-            </span>
-
-            <span class="tag">
-              Data Visualization
-            </span>
-
-            <span class="tag">
-              Portfolio Analysis
-            </span>
-
-          </div>
-
-
-          <a
-            class="project-link"
-            href="https://github.com/safiyazalavi/Project-Portfolio-Repo/tree/main/investment-diversification-app/project-3-fardaevm-project"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Explore Project →
-          </a>
-
-        </article>
-        <!-- PROJECT 4 -->
-
-        <article class="project-card">
-
-          <div class="project-number">
-            04
-          </div>
-
-          <h3>
-            Flight Delay Prediction
-          </h3>
-
-          <p class="project-description">
-            Developed a large-scale machine learning pipeline to predict
-            commercial flight delays using historical flight and weather data,
-            with a focus on feature engineering, distributed computing,
-            and predictive model evaluation.
-          </p>
-
-          <div class="tech-stack">
-
-            <span class="tag">
-              PySpark
-            </span>
-
-            <span class="tag">
-              Machine Learning
-            </span>
-
-            <span class="tag">
-              Big Data
-            </span>
-
-            <span class="tag">
-              Feature Engineering
-            </span>
-
-            <span class="tag">
-              Python
-            </span>
-
-          </div>
-
-          <a
-            class="project-link"
-            href="https://safiyazalavi.github.io/flight-delay-prediction.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Final Report →
-          </a>
-
-        </article>
-
+        </div>
       </div>
+    </section>
 
+    <section class="expertise" id="expertise" aria-labelledby="expertise-heading">
+      <div class="wrap">
+        <div class="expertise-header">
+          <div>
+            <div class="eyebrow">03 / Expertise</div>
+            <h2 class="section-title" id="expertise-heading">Technical toolkit.</h2>
+          </div>
+          <p>Tools and methods used across my machine learning, biomedical, and analytical projects.</p>
+        </div>
+        <div class="skill-grid">
+          <div class="skill"><h3>Programming</h3><p>Python<br />R<br />SQL<br />HTML / CSS</p></div>
+          <div class="skill"><h3>Machine learning</h3><p>XGBoost<br />Classification<br />Deep learning<br />Model evaluation</p></div>
+          <div class="skill"><h3>Natural language processing</h3><p>BERT / BioBERT<br />Transformers<br />Biomedical NLP<br />Text classification</p></div>
+          <div class="skill"><h3>Analytics</h3><p>Financial modeling<br />Portfolio analytics<br />Data visualization<br />Statistical analysis</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow">04 / Get in touch</div>
+          <h2 id="contact-heading">Interested in connecting?</h2>
+        </div>
+        <div class="contact-actions">
+          <a href="mailto:safiyazalavi@gmail.com">Email me ↗</a>
+          <a href="https://www.linkedin.com/in/safiyaalavi/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/safiyazalavi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <span>© 2026 Safiya Alavi</span>
+      <a href="#top">Back to top ↑</a>
     </div>
-
-  </section>
-
-
-
-  <!-- ==========================================================
-       ABOUT
-  ========================================================== -->
-
-  <section id="about">
-
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <div class="section-label">
-          Background
-        </div>
-
-        <h2>
-          About Me
-        </h2>
-
-      </div>
-
-
-
-      <div class="about-grid">
-
-
-        <div class="about-text">
-
-          <p>
-            I am a data scientist with experience applying machine
-            learning, statistical analysis, and financial modeling to
-            biotechnology and healthcare problems.
-          </p>
-
-          <p>
-            My work has included investment analytics, portfolio modeling, and evaluating
-            clinical-stage biotechnology companies.
-          </p>
-
-          <p>
-            I am particularly interested in using quantitative methods
-            to improve complex strategic and investment decisions in
-            biotechnology.
-          </p>
-
-        </div>
-
-
-
-        <div class="about-details">
-
-
-          <div class="detail-block">
-
-            <h3>
-              Education
-            </h3>
-
-            <p>
-              M.S. Information & Data Science
-              <br />
-              University of California, Berkeley
-            </p>
-
-          </div>
-
-
-
-          <div class="detail-block">
-
-            <h3>
-              Undergraduate
-            </h3>
-
-            <p>
-              B.S. Data Science & Statistics
-              <br />
-              University of California, Santa Barbara
-            </p>
-
-          </div>
-
-
-
-          <div class="detail-block">
-
-            <h3>
-              Areas of Interest
-            </h3>
-
-            <p>
-              Biotechnology
-              <br />
-              Machine Learning
-              <br />
-              Investment Analytics
-              <br />
-              Corporate Strategy
-            </p>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==========================================================
-       SKILLS
-  ========================================================== -->
-
-  <section
-    id="skills"
-    class="section-alt"
-  >
-
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <div class="section-label">
-          Technical Toolkit
-        </div>
-
-        <h2>
-          Skills & Expertise
-        </h2>
-
-      </div>
-
-
-
-      <div class="skills-grid">
-
-
-        <div class="skill-group">
-
-          <h3>
-            Programming
-          </h3>
-
-          <p>
-            Python
-            <br />
-            R
-            <br />
-            SQL
-            <br />
-            HTML / CSS
-          </p>
-
-        </div>
-
-
-
-        <div class="skill-group">
-
-          <h3>
-            Machine Learning
-          </h3>
-
-          <p>
-            XGBoost
-            <br />
-            Classification
-            <br />
-            Deep Learning
-            <br />
-            Model Evaluation
-          </p>
-
-        </div>
-
-
-
-        <div class="skill-group">
-
-          <h3>
-            NLP
-          </h3>
-
-          <p>
-            BERT
-            <br />
-            BioBERT
-            <br />
-            Transformers
-            <br />
-            Biomedical NLP
-          </p>
-
-        </div>
-
-
-
-        <div class="skill-group">
-
-          <h3>
-            Analytics
-          </h3>
-
-          <p>
-            Financial Modeling
-            <br />
-            Portfolio Analytics
-            <br />
-            Data Visualization
-            <br />
-            Statistical Analysis
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==========================================================
-       CONTACT
-  ========================================================== -->
-
-  <section class="contact">
-
-    <div class="container contact-content">
-
-
-      <div class="section-label">
-        Contact
-      </div>
-
-
-      <h2>
-        Let's Connect
-      </h2>
-
-
-      <div class="contact-links">
-
-
-        <a
-          class="button button-primary"
-          href="mailto:safiyazalavi@gmail.com"
-        >
-          Email Me
-        </a>
-
-
-        <a
-          class="button button-secondary"
-          href="https://github.com/safiyazalavi"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-
-        <a
-          class="button button-secondary"
-          href="https://www.linkedin.com/in/safiyaalavi/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ==========================================================
-       FOOTER
-  ========================================================== -->
-
-  <footer>
-
-    <div class="container">
-      © 2026 Safiya Alavi
-    </div>
-
   </footer>
-
-
 </body>
-
 </html>
