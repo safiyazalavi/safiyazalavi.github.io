@@ -69,19 +69,7 @@
       justify-content: space-between; gap: 30px;
     }
     .brand { display: flex; align-items: center; gap: 13px; color: var(--walnut); }
-    .brand-mark {
-      display: grid; place-items: center; width: 39px; height: 39px;
-      background: var(--walnut); color: var(--paper);
-      font: 400 16px var(--serif); letter-spacing: -.05em;
-    }
-    .brand-name { font-family: var(--serif); font-size: 14px; letter-spacing: -.02em; white-space: nowrap; }
-    .nav-links { display: flex; align-items: center; gap: 31px; }
-    .nav-links a { font-size: 12px; font-weight: 600; color: var(--body); transition: color .2s ease; }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--teal); }
-    .nav-links .nav-contact {
-      padding: 9px 16px; border: 1px solid #9eaaa2;
-      color: var(--teal-dark); transition: background .2s ease, color .2s ease;
-    }
+
     .nav-links .nav-contact:hover { background: var(--sea-glass); color: var(--teal-dark); }
 
     /* Intro */
@@ -212,11 +200,11 @@
     .contact-grid { display: flex; align-items: end; justify-content: space-between; gap: 35px; }
     .contact .eyebrow { color: #add0c3; }
     .contact h2 {
-      font: 400 clamp(36px, 4.7vw, 61px)/1.25 var(--serif);
+      font: 400 clamp(26px, 3vw, 38px)/1.25 var(--serif);
       letter-spacing: -.055em; margin: 17px 0 0; max-width: 620px;
     }
     .contact-actions { display: flex; align-items: center; gap: 24px; padding-bottom: 5px; flex-wrap: wrap; }
-    .contact-actions a { color: #f5f0e8; font-weight: 700; font-size: 12px; white-space: nowrap; border-bottom: 1px solid #b7ccbf; padding-bottom: 7px; }
+    .contact-actions a { color: #f5f0e8; font-weight: 700; font-size: 16px; white-space: nowrap; border-bottom: 1px solid #b7ccbf; padding-bottom: 7px; }
     .contact-actions a:hover { color: #bbe2d4; }
     .footer { background: #392f29; color: #d5cec4; }
     .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 23px; font-size: 11px; letter-spacing: .02em; }
@@ -275,8 +263,6 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Safiya Alavi, back to top">
-        <span class="brand-mark" aria-hidden="true">SA</span>
-        <span class="brand-name">Safiya Alavi</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#work">Projects</a>
@@ -293,8 +279,7 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">Data Science · Biotechnology · Investing</div>
-          <h1 id="hero-heading">Safiya Alavi<span>.</span></h1>
-          <p class="hero-lede">Data Science × Machine Learning × Biotechnology</p>
+          <h1 id="hero-heading">Safiya Alavi</h1>
           <p class="hero-description">
             I bridge biotechnology investing and data science, turning complex data into actionable insights that drive investment and strategic decisions.
           </p>
@@ -309,7 +294,6 @@
             <img src="./headshot-2025.jpg" alt="Portrait of Safiya Alavi" onerror="this.style.display='none'" />
           </div>
           <div class="portrait-caption">
-            <span>Data science &amp; biotechnology</span>
             <span class="caption-rule" aria-hidden="true"></span>
             <span>Portfolio</span>
           </div>
@@ -321,7 +305,7 @@
       <div class="wrap section-layout">
         <div class="section-side">
           <div class="eyebrow">01 / Selected work</div>
-          <h2 class="section-title" id="work-heading">Projects with purpose.</h2>
+          <h2 class="section-title" id="work-heading">My Project Highlights</h2>
           <p class="section-intro">A selection of projects spanning biomedical NLP, predictive modeling, distributed computing, and investment analytics.</p>
         </div>
 
@@ -383,9 +367,9 @@
         <div>
           <div class="eyebrow">02 / Background</div>
           <div class="about-copy">
-            <p>I am a data scientist with experience applying machine learning, statistical analysis, and financial modeling to biotechnology and healthcare questions.</p>
-            <p>My work spans biomedical NLP, investment analytics, portfolio modeling, and the evaluation of clinical-stage biotechnology companies.</p>
-            <p>I'm particularly interested in turning rigorous quantitative work into clearer strategic and investment decisions.</p>
+            <p>I’m a data scientist and biotechnology investment professional with experience applying machine learning, statistical analysis, and financial modeling to complex challenges in life sciences. </p>
+            <p>My work spans clinical-stage biotechnology research, biomedical NLP, predictive modeling, and the development of quantitative tools that directly support investment and portfolio decisions.</p>
+            <p>I’m particularly interested in bridging technical innovation with business strategy, translating complex scientific and financial data into actionable insights that improve decision-making.</p>
           </div>
         </div>
         <div class="about-aside" aria-label="Education and interests">
